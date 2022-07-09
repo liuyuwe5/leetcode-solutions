@@ -13,8 +13,6 @@ class Solution(object):
         while i < len(intervals):
             if sortedInt[i][0] == prev[0]:
                 cnt += 1
-                print(i)
-                print(prev)
             elif prev[1] >= sortedInt[i][1]:
                 cnt += 1
                 prev = sortedInt[i]
@@ -22,7 +20,5 @@ class Solution(object):
                 cnt += 1
             else:
                 prev = sortedInt[i]
-            print(i)
-            print(prev)
             i += 1
         return cnt

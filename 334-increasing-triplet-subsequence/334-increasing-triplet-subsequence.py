@@ -5,10 +5,10 @@ class Solution(object):
         :rtype: bool
         """
         
-        if len(nums) < 3:
-            return False
+      
         if len(set(nums)) < 3:
             return False
+        
         for i in range(len(nums) - 2):
             j = i + 1
             while j < len(nums) - 1:

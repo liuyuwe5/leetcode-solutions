@@ -8,7 +8,9 @@ class Solution {
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
             Integer required = sum - k;
-            cnt += mapSum.getOrDefault(required, 0);
+            if (mapSum.containsKey(required)) {
+                cnt += mapSum.get(required);
+            }
             if (mapSum.containsKey(sum)) {
                 mapSum.put(sum,mapSum.get(sum)+1);
             } else {

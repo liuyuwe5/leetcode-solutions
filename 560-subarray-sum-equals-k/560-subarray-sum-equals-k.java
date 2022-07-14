@@ -8,16 +8,13 @@ class Solution {
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
             Integer required = sum - k;
-            if (mapSum.containsKey(required)) {
-                cnt += mapSum.get(required);
-            }
+            cnt += mapSum.getOrDefault(required, 0);
             if (mapSum.containsKey(sum)) {
                 mapSum.put(sum,mapSum.get(sum)+1);
             } else {
                 mapSum.put(sum,1);
             }
         }
-        
         return cnt;
     }
 }

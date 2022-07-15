@@ -4,13 +4,21 @@ class Solution {
         HashMap<Character, Integer> charMap = new HashMap<Character, Integer>();
         for (int i=0; i < s.length(); i++) {
             Character c = s.charAt(i);
-            charMap.put(c, charMap.getOrDefault(c, 0)+1);
+            if (charMap.containsKey(c)) {
+                charMap.put(c, charMap.get(c)+1);
+            } else {
+                charMap.put(c, 1);
+            }
         }
         Integer cnt = 0;
         Integer numOfOdd = 0;
         for (Integer v: charMap.values()) {
-            cnt += v - (v & 1);
-            numOfOdd += v & 1;
+            if ((v & 1) == 0) {
+                cnt += v;
+            } else {
+                cnt += v - 1;
+                numOfOdd++;
+            }
         }
         if (numOfOdd >= 1) {
             cnt++;

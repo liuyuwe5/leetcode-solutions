@@ -9,12 +9,8 @@ class Solution {
         Integer cnt = 0;
         Integer numOfOdd = 0;
         for (Integer v: charMap.values()) {
-            if ((v & 1) == 0) {
-                cnt += v;
-            } else {
-                cnt += v - 1;
-                numOfOdd++;
-            }
+            cnt += v - (v & 1);
+            numOfOdd += v & 1;
         }
         if (numOfOdd >= 1) {
             cnt++;

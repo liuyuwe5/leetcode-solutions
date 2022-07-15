@@ -10,7 +10,6 @@ class Solution {
                 charMap.put(c, 1);
             }
         }
-        //System.out.println(charMap.values());
         Integer cnt = 0;
         Integer numOfOdd = 0;
         for (Integer v: charMap.values()) {

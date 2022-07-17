@@ -2,13 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 class Solution {
-    private static Integer[] append(Integer[] arr, int element){
-        List<Integer> list = new ArrayList<>(Arrays.asList(arr));
-        list.add(element);
- 
-        return list.toArray(new Integer[0]);
-    }
- 
     public List<Integer> partitionLabels(String s) {
         HashMap<Character, Integer[]> map = new HashMap<Character, Integer[]>();
         for (int i=0; i< s.length(); i++) {

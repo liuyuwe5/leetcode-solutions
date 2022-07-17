@@ -7,7 +7,6 @@ class Solution {
             return false;
         }
         for (int i=0; i<pattern.length(); i++) {
-            System.out.println(map);
             Character charMap = pattern.charAt(i);
             if (map.containsKey(lstStr[i])) {
                 Character requiredchar = map.get(lstStr[i]);
